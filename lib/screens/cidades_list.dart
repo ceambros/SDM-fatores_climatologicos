@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sdm_fatores_climatologicos/screens/dados_list.dart';
 
 class CidadesList extends StatelessWidget {
   @override
@@ -11,8 +12,28 @@ class CidadesList extends StatelessWidget {
         children: [
           Card(
             child: ListTile(
-              title: Text("Fazenda Teste_1"),
-              subtitle: Text("Araraquara"),
+              onTap: () => {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => DadosList('araraquara'),
+                  ),
+                ),
+              },
+              title: Text("Araraquara"),
+              subtitle: Text("Fazenda 1"),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              onTap: () => {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => DadosList('matao'),
+                  ),
+                ),
+              },
+              title: Text("Matão"),
+              subtitle: Text("Fazenda 1"),
             ),
           )
         ],
